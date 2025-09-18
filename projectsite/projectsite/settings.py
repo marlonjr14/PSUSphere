@@ -39,8 +39,23 @@ INSTALLED_APPS = [
 "django.contrib.staticfiles",
 "studentorg",
 "widget_tweaks", 
+
+"django.contrib.sites",
+"allauth",
+"allauth.acount",
+"allauth.socialaccount",
+
+"allauth.socialaccount.providers.google",
+"allauth.socialaccount.providers.github",
 ]
 
+
+SITE_ID = 2
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
 
 MIDDLEWARE = [
 'django.middleware.security.SecurityMiddleware',
@@ -48,6 +63,7 @@ MIDDLEWARE = [
 'django.middleware.common.CommonMiddleware',
 'django.middleware.csrf.CsrfViewMiddleware',
 'django.contrib.auth.middleware.AuthenticationMiddleware',
+'django.account.middleware.AccountMiddleware',
 'django.contrib.messages.middleware.MessageMiddleware',
 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
