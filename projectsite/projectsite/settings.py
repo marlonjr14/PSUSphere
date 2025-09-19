@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
 "django.contrib.sites",
 "allauth",
-"allauth.acount",
+"allauth.account",
 "allauth.socialaccount",
 
 "allauth.socialaccount.providers.google",
@@ -63,7 +63,7 @@ MIDDLEWARE = [
 'django.middleware.common.CommonMiddleware',
 'django.middleware.csrf.CsrfViewMiddleware',
 'django.contrib.auth.middleware.AuthenticationMiddleware',
-'django.account.middleware.AccountMiddleware',
+'allauth.account.middleware.AccountMiddleware',
 'django.contrib.messages.middleware.MessageMiddleware',
 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
